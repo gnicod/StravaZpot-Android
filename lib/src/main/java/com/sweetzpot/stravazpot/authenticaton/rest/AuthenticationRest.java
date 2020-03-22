@@ -16,6 +16,13 @@ public interface AuthenticationRest {
             @Field("client_secret") String clientSecret,
             @Field("code") String code);
 
+    @POST("/oauth/token")
+    @FormUrlEncoded
+    Call<LoginResult> refreshToken(
+            @Field("client_id") int clientID,
+            @Field("client_secret") String clientSecret,
+            @Field("refresh_token") String refreshToken);
+
     @POST("/oauth/deauthorize")
     Call<Void> deauthorize();
 }

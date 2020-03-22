@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StravaLoginButton"><attr format="enum" name="type">
+            <enum name="light" value="0"/>
+            <enum name="orange" value="1"/>
+        </attr></declare-styleable>
+    <string name="app_name">StravaZpot</string>
+</resources>
