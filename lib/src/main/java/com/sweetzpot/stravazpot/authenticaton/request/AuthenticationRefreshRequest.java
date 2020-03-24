@@ -1,11 +1,11 @@
 package com.sweetzpot.stravazpot.authenticaton.request;
 
+import retrofit2.Call;
 import com.sweetzpot.stravazpot.authenticaton.api.AuthenticationAPI;
 import com.sweetzpot.stravazpot.authenticaton.model.AppCredentials;
 import com.sweetzpot.stravazpot.authenticaton.model.LoginResult;
 import com.sweetzpot.stravazpot.authenticaton.rest.AuthenticationRest;
 
-import retrofit2.Call;
 
 public class AuthenticationRefreshRequest {
 
@@ -26,7 +26,7 @@ public class AuthenticationRefreshRequest {
     }
 
     public LoginResult execute() {
-        Call<LoginResult> call = restService.refreshToken(appCredentials.getClientID(), appCredentials.getClientSecret(), refreshToken);
+        Call<LoginResult> call = restService.refreshToken(appCredentials.getClientID(), appCredentials.getClientSecret(), refreshToken, "refresh_token");
         return api.execute(call);
     }
 }
